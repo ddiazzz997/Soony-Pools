@@ -15,20 +15,19 @@ const Services: React.FC = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {SERVICE_TIERS.map((tier) => (
-            <div 
-              key={tier.id} 
-              className={`relative rounded-3xl p-8 border transition-all duration-300 hover:shadow-2xl ${
-                tier.popular 
-                  ? 'border-azure-500 bg-azure-50/30 ring-1 ring-azure-500 shadow-xl scale-105' 
+            <div
+              key={tier.id}
+              className={`relative rounded-3xl p-8 border transition-all duration-200 hover:shadow-2xl cursor-pointer ${tier.popular
+                  ? 'border-azure-500 bg-azure-50/30 ring-1 ring-azure-500 shadow-xl scale-105'
                   : 'border-slate-200 bg-white hover:border-azure-300'
-              }`}
+                }`}
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-azure-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
                   Most Popular
                 </div>
               )}
-              
+
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-primary mb-2">{tier.name}</h3>
                 <p className="text-secondary text-sm h-10 leading-snug">{tier.description}</p>
@@ -50,21 +49,20 @@ const Services: React.FC = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-4 rounded-xl font-bold transition-all active:scale-95 ${
-                tier.popular 
-                  ? 'bg-azure-500 text-white hover:bg-azure-600 shadow-lg shadow-azure-500/20' 
+              <button className={`w-full py-4 min-h-[48px] rounded-xl font-bold transition-all duration-200 active:scale-95 cursor-pointer ${tier.popular
+                  ? 'bg-azure-500 text-white hover:bg-azure-600 shadow-lg shadow-azure-500/20'
                   : 'bg-slate-100 text-primary hover:bg-slate-200'
-              }`}>
+                }`}>
                 Choose {tier.name}
               </button>
             </div>
           ))}
         </div>
-        
+
         <div className="mt-16 text-center">
           <p className="text-secondary text-sm">
-            * Custom quotes available for commercial pools and extra-large residential estates. 
-            <a href="#contact" className="text-azure-600 font-bold ml-1 hover:underline">Contact us</a>
+            * Custom quotes available for commercial pools and extra-large residential estates.
+            <a href="#contact" className="text-azure-600 font-bold ml-1 hover:underline cursor-pointer">Contact us</a>
           </p>
         </div>
       </div>
